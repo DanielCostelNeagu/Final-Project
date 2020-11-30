@@ -1,0 +1,6 @@
+https://www.atlassian.com/git/tutorials/what-is-version-control
+first go to pc and open project folder, in there do Git Bash here,
+git status
+git add .
+git commit -m "somthing"
+git push
