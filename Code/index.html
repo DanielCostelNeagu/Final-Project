@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmers Market</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/genericVeg.jpg" width="125px">
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Products</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">Account</a></li>
+                       <!-- <li><a href="">Basket</a></li> -->
+                    </ul>
+                </nav>
+                <img src="images/cart.png" alt="" width="30px" height="30px">
+                <img src="images/menu.png" alt="" class="menu-icon" onclick="menutoglle()">
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <h1>From Farm<br> To Table</h1>
+                    <P>Locally grown and locally produced</P>
+                    <a href="" class="btn">View Products &#9755;</a>
+                </div>
+                <div class="col-2">
+                    <img src="images/generic.jpg" alt="generic vegetables">
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="categories">
+        <div class="small-container">
+            <h2 class="title">Fresh Produces By Categories</h2>
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/vegetables.jpg" alt="">
+                    <h4>Vegetables</h4>
+                </div>
+                <div class="col-3">
+                    <img src="images/fruits.jpg" alt="">
+                    <h4>Fruits</h4>
+                    
+                </div>
+                <div class="col-3">
+                    <img src="images/bakery.jpg" alt="">
+                    <h4>Bakery</h4>
+                </div>
+            </div>
+        </div>        
+    </div>
+
+    <div class="small-container">
+        <h2 class="title">In Season Fruits and Vegetables</h2>
+        <div class="row">
+            
+            <div class="col-4">
+                <img src="images/lettuce.jpg" alt="lettuce">
+                <h4>Fresh Green Lettuce</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+                <p>€0.99</p>
+            </div>
+            <div class="col-4">
+                <img src="images/strawberries.jpg" alt="lettuce">
+                <h4>Fresh Strawberries</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                </div>
+                <p>€4.99</p>
+            </div>
+            <div class="col-4">
+                <img src="images/carrots.jpg" alt="lettuce">
+                <h4>Fresh Carrots</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p>€0.99.</p>
+            </div>
+            <div class="col-4">
+                <img src="images/apples.jpg" alt="lettuce">
+                <h4>Fresh Red Apples</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p>€2.99</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="images/bag.jpg" alt="green bag" class="offer-img">
+                </div>
+                <div class="col-2">
+                    <p>Exclusively Availabel on Farmers Market</p>
+                    <h1>Reusable Green Bag</h1>
+                    <small>
+                        The Green Ecological Bag is available to purchase from our website only for €1.99, use and reuse.<br>
+                    </small>
+                    <a href="" class="btn">Buy Now &#9755;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download The App</h3>
+                    <p>Download the Application for Android and IOS devices. </p>
+                    <div class="app-logo">
+                        <img src="images/google-store.png" alt="">
+                        <img src="images/app-store.png" alt="">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                   <img src="images/genericVeg.jpg" alt="">
+                    <p>Our Market is serving the local community by providing the best products 
+                        that are made and outsourced locally by farmers and producers.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Click and Collect</li>
+                        <li>Return Policy</li>
+
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>LinkedIn</li>
+                        <li>GitHub</li>
+                        <li>Facebook</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2020 - Farmers Market &#169;</p>
+        </div>
+    </div>
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+    MenuItems.style.maxHeight = "0px";
+    function menutoglle(){
+        if(MenuItems.style.maxHeight =="0px"){
+            MenuItems.style.maxHeight = "200px";
+        }
+        else{
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+
+</script>
+    
+</body>
+</html>
