@@ -207,6 +207,142 @@ ul{
     display: none;
 }
 
+/*------------Products page-------*/
+.row-2{
+    justify-content: space-between;
+    margin: 100px auto 50px;
+
+}
+select{
+    border: 5px solid #0c8108;
+    padding: 5px;
+}
+select:focus{
+    outline: none;
+}
+.page-btn{
+    margin: 0 auto 60px;
+}
+.page-btn span{
+    display: inline-block;
+    border: 1px solid #0c8108;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.page-btn span:hover{
+    background: #0c8108;
+    color: #fff;
+}
+
+/*-----------------Product page-----------*/
+.single-product{
+    margin: 80px;
+}
+.single-product .col-2{
+    padding: 20px;
+}
+.single-product .col-2 img{
+    padding: 0;
+}
+.single-product h4{
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+.single-product select{
+    display: block;
+    padding: 10px;
+    margin-top: 20px;
+}
+.single-product input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+    border: 5px solid #0c8108;
+}
+input:focus{
+    outline: none;
+}
+.single-product .fa{
+    color: #68b410;
+    margin-left: 10px;
+}
+
+/*=========Basket page============*/
+.basket-page{
+    margin: 80px auto;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.basket-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+th{
+    text-align: left;
+    padding: 25px;
+    color: #fff;
+    background: #3f4b0a;
+    font-weight: normal;
+}
+td{
+    padding: 10px 5px;
+}
+td input{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+td a{
+    color: #9c0c0c;
+    font-size: 16px;
+}
+td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+}
+.total-price table{
+    border-top: 3px solid #3f4b0a;
+    width: 100%;
+    max-width: 350px;
+}
+td:last-child{
+    text-align: right;
+}
+th:last-child{
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width:800px){
     nav ul{
         
@@ -240,8 +376,17 @@ ul{
     .col-2, .col-3, .col-4{
         flex-basis: 100%;
     }
+    .single-product .row{
+        text-align: left;
+    }
+    .single-product .col-2{
+        padding: 20px 0;
+    }
+    .single-product h1{
+        font-size: 26;
+        line-height: 40px;
+    }
 }
-
 
 
 

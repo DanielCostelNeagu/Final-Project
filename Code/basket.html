@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>    
+    
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/genericVeg.jpg" width="125px">
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="account.html">Account</a></li>
+                       <!-- <li><a href="">Basket</a></li> -->
+                    </ul>
+                </nav>
+                
+                <img src="images/menu.png" alt="" class="menu-icon" onclick="menutoglle()">
+            </div>
+            
+        </div>
+    
+    <div class="small-container basket-page">
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="basket-info">
+                        <img src="images/bag.jpg" alt="" width="100%">
+                        <div>
+                            <p>Green Bag</p>
+                            <small>Price: €1.99</small><br>
+                            <a href="">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" value="1"></td>
+                <td>€1.99</td>
+            </tr>
+        </table>
+
+        <div class="total-price">
+            <table>
+                <tr>
+                    <td>Total Price:</td>
+                    <td>€1.99</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>    
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download The App</h3>
+                    <p>Download the Application for Android and IOS devices. </p>
+                    <div class="app-logo">
+                        <img src="images/google-store.png" alt="">
+                        <img src="images/app-store.png" alt="">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                   <img src="images/genericVeg.jpg" alt="">
+                    <p>Our Market is serving the local community by providing the best products 
+                        that are made and outsourced locally by farmers and producers.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Click and Collect</li>
+                        <li>Return Policy</li>
+
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>LinkedIn</li>
+                        <li>GitHub</li>
+                        <li>Facebook</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2020 - Farmers Market &#169;</p>
+        </div>
+    </div>
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+    MenuItems.style.maxHeight = "0px";
+    function menutoglle(){
+        if(MenuItems.style.maxHeight =="0px"){
+            MenuItems.style.maxHeight = "200px";
+        }
+        else{
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+
+</script>
+    
+</body>
+</html>
