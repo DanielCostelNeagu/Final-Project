@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 
 //routes
 const authRoutes = require("./routes/auth");
+const adminRoutes = require("./routes/admin/auth");
 
 //variable or const enviroment
 env.config();
@@ -24,6 +25,7 @@ mongoose.connect(
 
 app.use(express.json());
 app.use("/api", authRoutes);
+app.use("/api", adminRoutes);
 
 
 /*app.get("/", (req, res, next) => {
