@@ -3,12 +3,14 @@ const env = require("dotenv");
 const bodyParser = require("body-parser");
 const app = express();
 const mongoose = require("mongoose");
+const path = require("path"); 
 
 //routes
 const authRoutes = require("./routes/auth");
 const adminRoutes = require("./routes/admin/auth");
 const categoryRoutes = require("./routes/category");
 const productRoutes = require("./routes/product");
+const cartRoutes = require("./routes/cart");
 
 
 //variable or const enviroment
@@ -31,7 +33,7 @@ app.use("/api", authRoutes);
 app.use("/api", adminRoutes);
 app.use("/api", categoryRoutes);
 app.use("/api", productRoutes);
-
+app.use("/api", cartRoutes);
 
 /*app.get("/", (req, res, next) => {
     res.status(200).json({
