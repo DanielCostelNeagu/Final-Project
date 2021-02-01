@@ -1,6 +1,8 @@
 import React from 'react';
-
 import Header from "../Header";
+import {Container, Row, Col} from "react-bootstrap";
+import { NavLink } from 'react-router-dom';
+
 
 
 
@@ -11,17 +13,40 @@ import Header from "../Header";
 
 
 const Layout = (props) => {
-  return(
+  return (
     <>
-        <Header />
-        
-            {props.children}
-        
-        
-        {/*here I can add with a div the footer*/}
-    </>
-   )
+      <Header />
+      {
+        props.sidebar ?
+          <Container fluid>
+            <Row>
+              <Col md={2} className="sidebar">
+                <ul>
+                  <li>
+                    <NavLink to={"/"}>HOME</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to={"/products"}>PRODUCTS</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to={"/orders"}>ORDERS</NavLink>
+                  </li>
+                </ul>
+              </Col>
+              <Col md={10} style={{ marginLeft: "auto",  paddingTop: '60px' }}>
+              {props.children}
+              </Col>
+            </Row>
+          </Container>
+          :
+          props.children
+      }
 
- }
+      
+      {/*here I can add with a div the footer*/}
+    </>
+  )
+
+}
 
 export default Layout;
