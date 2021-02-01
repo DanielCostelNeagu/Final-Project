@@ -1,7 +1,8 @@
-import React from 'react'
-import { Jumbotron } from 'react-bootstrap';
+import React from 'react';
+import { Col, Container, Jumbotron, Row } from 'react-bootstrap';
 import Layout from '../../components/Layout';
-
+import './style.css';
+import { NavLink } from 'react-router-dom';
 /**
 * @author
 * @function Home
@@ -9,10 +10,17 @@ import Layout from '../../components/Layout';
 
 const Home = (props) => {
   return(
-    <Layout>
-        <Jumbotron>
+    <Layout >
+      <Container fluid>
+        <Row>
+          <Col md={2} className="sidebar">Side Bar</Col>
+          <Col md={10} style ={{marginLeft: "auto"}}>Container</Col>
+        </Row>
+      </Container>
+
+        {/*<Jumbotron>
             <h1>Welcome</h1>
-        </Jumbotron>
+        </Jumbotron>*/}
     </Layout>
    )
 
