@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "../Header";
 import {Container, Row, Col} from "react-bootstrap";
 import { NavLink } from 'react-router-dom';
-
+import './style.css';
 
 
 
@@ -23,7 +23,10 @@ const Layout = (props) => {
               <Col md={2} className="sidebar">
                 <ul>
                   <li>
-                    <NavLink to={"/"}>HOME</NavLink>
+                    <NavLink exact to={"/"}>HOME</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to={"/category"}>CATEGORY</NavLink>
                   </li>
                   <li>
                     <NavLink to={"/products"}>PRODUCTS</NavLink>

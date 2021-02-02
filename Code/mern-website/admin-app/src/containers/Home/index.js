@@ -11,26 +11,8 @@ import { NavLink } from 'react-router-dom';
 
 const Home = (props) => {
   return(
-    <Layout >
-      <Container fluid>
-        <Row>
-          <Col md={2} className="sidebar">
-            <ul>
-              <li>
-                <NavLink to={"/"}>HOME</NavLink>
-              </li>
-              <li>
-                <NavLink to={"/products"}>PRODUCTS</NavLink>
-              </li>
-              <li>
-                <NavLink to={"/orders"}>ORDERS</NavLink>
-              </li>
-            </ul>
-          </Col>
-          <Col md={10} style ={{marginLeft: "auto"}}>Container</Col>
-        </Row>
-      </Container>
-
+    <Layout sidebar>
+      HOME
         {/*<Jumbotron>
             <h1>Welcome</h1>
         </Jumbotron>*/}

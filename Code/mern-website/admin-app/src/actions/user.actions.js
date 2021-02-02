@@ -9,7 +9,7 @@ export const signup = (user) => {
         const res = await axios.post("/admin/signup", {
             ...user
         });
-        if (res.status === 201) {
+        if (res.status === 200) {
             const {message} = res.data;
             
             dispatch({
