@@ -18,7 +18,7 @@ const Header = (props) => {
     return (
     <Nav>     
       <li className="nav-item">
-        <span className="nav-link" onClick={logout}>Logout</span>
+        <span className="nav-link" onClick={logout}>Log Out</span>
       </li>
     </Nav>
     );
@@ -28,7 +28,7 @@ const renderNonLoggedInLinks = () => {
   return (<Nav>
     {/*<Nav.Link href="#deets">Signin</Nav.Link>*/}
     <li className="nav-item">
-      <NavLink to="signin" className="nav-link">Login</NavLink>
+      <NavLink to="signin" className="nav-link">Log In</NavLink>
     </li>
     <li className="nav-item">
       <NavLink to="signup" className="nav-link">Register</NavLink>
@@ -38,7 +38,7 @@ const renderNonLoggedInLinks = () => {
 }
 
 return (
-  <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{ zIndex: 1 }}>
+  <Navbar collapseOnSelect  expand="lg" bg="dark" variant="dark" style={{ zIndex: 1 }}>
     <Container fluid>
       {/*<Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand>*/}
       <Link to="/" className="nav-brand">Admin Dashboard</Link>

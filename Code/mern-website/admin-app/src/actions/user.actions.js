@@ -1,5 +1,5 @@
 import axios from "../helpers/axios";
-import { authConstants, userConstants } from "./constants";
+import {  userConstants } from "./constants";
 
 export const signup = (user) => {
     console.log(user); 

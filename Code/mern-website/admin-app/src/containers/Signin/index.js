@@ -39,7 +39,7 @@ const Signin = (props) => {
 
                             <Input
                                 label="Email"
-                                placeholder="Enter your Email Address"
+                                placeholder="Enter your Email Address:"
                                 value={email}
                                 type="email"
                                 onChange={(e) => setEmail(e.target.value)}
@@ -49,7 +49,7 @@ const Signin = (props) => {
 
                             <Input
                                 label="Password"
-                                placeholder="Enter a Password"
+                                placeholder="Enter your Password:"
                                 value={password}
                                 type="password"
                                 onChange={(e) => setPassword(e.target.value)}

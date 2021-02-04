@@ -17,8 +17,8 @@ const Signup = (props) => {
     const [error, setError] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const auth = useSelector(state => state.auth);
-    const user = useSelector(state => state.user);
+    const auth = useSelector((state) => state.auth);
+    const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
     const userSignup = (e) => {
