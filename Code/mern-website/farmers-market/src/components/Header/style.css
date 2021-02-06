@@ -1,0 +1,8 @@
+.header{
+    width: 100%;
+    height: 56px;
+    background: radial-gradient(#fff, #ffd6d6);
+}
+.header .row{
+    margin-top: 70px;
+}
