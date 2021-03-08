@@ -26,6 +26,9 @@ const Layout = (props) => {
                     <NavLink exact to={"/"}>HOME</NavLink>
                   </li>
                   <li>
+                    <NavLink to={"/page"}>PAGE</NavLink>
+                  </li>
+                  <li>
                     <NavLink to={"/category"}>CATEGORY</NavLink>
                   </li>
                   <li>
