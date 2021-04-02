@@ -2,6 +2,7 @@ const Product = require("../models/product");
 const shortid = require("shortid");
 const slugify = require("slugify");
 const Category = require('../models/category');
+const product = require("../models/product");
 
 exports.createProduct = (req, res) => {
     //res.status(200).json({ file: req.files, body: req.body});
@@ -41,14 +42,14 @@ exports.getProductsBySlug = (req, res) => {
         .exec((error, category) => {
 
             if (error) {
-                return res.status(400).jason({ error });
+                return res.status(400).json({ error });
             }
 
             if (category) {
                 Product.find({ category: category._id })
                     .exec((error, products) => {
                         if (error) {
-                            return res.status(400).jason({ error });
+                            return res.status(400).json({ error });
                         }
                         if (products.length > 0) {
                             res.status(200).json({
@@ -70,4 +71,19 @@ exports.getProductsBySlug = (req, res) => {
 
         });
 
+}
+
+exports.getProductDetailsById = (req, res) => {
+    const { productId } = req.params;
+    if (productId) {
+        Product.findOne({_id: productId})
+        .exec((error, product) => {
+            if(error) return res.status(400).json({ error });
+            if(product){
+                res.status(200).json({ product});
+            }
+        });
+    } else {
+        return res.status(400).json({ error: 'Params Required'});
+    }
 }

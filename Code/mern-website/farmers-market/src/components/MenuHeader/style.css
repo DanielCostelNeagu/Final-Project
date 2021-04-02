@@ -43,7 +43,7 @@
 }
 .menuHeader > ul > li > ul > li{
     float: left;
-    min-width: 200px;
+    min-width: 150px; /*200px*/
 }
 .menuHeader > ul > li > ul > li > a{
     text-decoration: none;
