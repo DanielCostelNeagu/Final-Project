@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
 import farmersMarketLogo from '../../images/logo/Logo.PNG';
-import goldenStar from '../../images/logo/favicon.ico.PNG';
 import { IoIosArrowDown, IoIosCart, IoIosSearch } from 'react-icons/io';
 import {
   Modal,
