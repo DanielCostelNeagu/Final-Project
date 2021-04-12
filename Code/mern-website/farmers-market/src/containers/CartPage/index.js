@@ -4,9 +4,11 @@ import Layout from "../../components/Layout";
 import Card from "../../components/UI/Card";
 import CartItem from "./CartItem";
 import { addToCart, getCartItems, removeCartItem } from "../../actions/cart.actions";
+
 import PriceDetails from "../../components/PriceDetails";
 import "./style.css";
 import { MaterialButton } from "../../components/MaterialUI";
+import {generatePublicUrl} from '../../urlConfig';
 
 /**
  * @author
@@ -26,6 +28,7 @@ const CartPage = (props) => {
   const auth = useSelector((state) => state.auth);
   //const cartItems = cart.cartItems;
   const [cartItems, setCartItems] = useState(cart.cartItems);
+  //console.log({cartItems});
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
+import {generatePublicUrl} from '../../../urlConfig';
 
 /**
  * @author
@@ -26,14 +27,14 @@ const CartItem = (props) => {
     <div className="cartItemContainer">
       <div className="flexRow">
         <div className="cartProImgContainer">
-          <img src={img} alt={""} />
+          <img src= {img} alt={""} />
         </div>
         <div className="cartItemDetails">
           <div>
             <p>{name}</p>
-            <p>Rs. {price}</p>
+            <p>Euro {price}</p>
           </div>
-          <div>Delivery in 3 - 5 days</div>
+          <div>Delivered from 1 to 3 days</div>
         </div>
       </div>
       <div
@@ -48,7 +49,11 @@ const CartItem = (props) => {
           <input value={qty} readOnly />
           <button onClick={onQuantityIncrement}>+</button>
         </div>
-        <button className="cartActionBtn">save for later</button>
+        <button 
+          className="cartActionBtn"
+        >
+          Save For Later
+        </button>
         <button
           className="cartActionBtn"
           onClick={() => props.onRemoveCartItem(_id)}

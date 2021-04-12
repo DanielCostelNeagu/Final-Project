@@ -78,7 +78,7 @@ const ProductDetailsPage = (props) => {
                 />
                 <MaterialButton
                     title="BUY NOW"
-                    bgColor="#fb641b"
+                    bgColor="#169c31"
                     textColor="#ffffff"
                     style={{
                     marginLeft: '5px'
