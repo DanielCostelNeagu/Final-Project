@@ -3,6 +3,13 @@
 *{
     font-family: 'Roboto', sans-serif;
 }
+body{
+    background: #ffd6d6; /* #f1f3f6;*/
+}
 .flexRow{
     display: flex;
+}
+.sb{
+    justify-content: space-between;
+    
 }

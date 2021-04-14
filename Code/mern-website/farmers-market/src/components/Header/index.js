@@ -53,8 +53,8 @@ const Header = (props) => {
           { label: 'Wishlist', href: '', icon: null },
           { label: 'Rewards', href: '', icon: null },
           { label: 'Gift Cards', href: '', icon: null },
-          { label: 'Logout', href: '', icon: null , onClick: logout },
-        ]}        
+          { label: 'Logout', href: '', icon: null, onClick: logout },
+        ]}
       />
     );
   }
@@ -67,7 +67,7 @@ const Header = (props) => {
             Login
               </a>
         }
-        menus={[         
+        menus={[
           { label: 'Farmers Market Plus Zone', href: '', icon: null },
           { label: 'Wishlist', href: '', icon: null },
           { label: 'Rewards Program', href: '', icon: null },
@@ -76,7 +76,7 @@ const Header = (props) => {
         firstMenu={
           <div className="firstmenu">
             <span>New Customer?</span>
-            <a style={{ color: '#2874f0' }}>Sign Up</a>
+            <a style={{ color: '#4B0082' }}>Sign Up</a>
           </div>
         }
       />
@@ -92,40 +92,41 @@ const Header = (props) => {
         <div className="authContainer">
           <div className="row">
             <div className="leftspace">
-            
+
               <h2>Login</h2>
               <p>Get access to your Orders, Wishlist and Recommendations</p>
-            
+
             </div>
             <div className="rightspace">
 
-              <MaterialInput
-                type="text"
-                label="Enter Email/Enter Mobile Number"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
+              <div className="loginInputContainer">
+                <MaterialInput
+                  type="text"
+                  label="Enter Email/Enter Mobile Number"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
 
-              <MaterialInput
-                type="password"
-                label="Enter Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                rightElement={<a href="#">Forgot?</a>}
-              />
-              <MaterialButton
-                title="Login"
-                bgColor="#0c8108"
-                textColor="#ffffff"
-                style={{
-                  margin: '40px 0'
-                }}
-                onClick={userLogin}
-              />
-              
-              <p>Login to get access to your Orders, Wishlist and Recommendations</p>
-            
+                <MaterialInput
+                  type="password"
+                  label="Enter Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  rightElement={<a href="#">Forgot?</a>}
+                />
+                <MaterialButton
+                  title="Login"
+                  bgColor="#0c8108"
+                  textColor="#ffffff"
+                  style={{
+                    margin: '40px 0'
+                  }}
+                  onClick={userLogin}
+                />
 
+                <p /*style={{textAlign: 'center'}}*/>Login to get access to your Orders, Wishlist and Recommendations</p>
+
+              </div>
             </div>
           </div>
         </div>
@@ -148,15 +149,15 @@ const Header = (props) => {
             />
             <div className="searchIconContainer">
               <IoIosSearch style={{
-                color: '#2874f0'
+                color: '#4B0082'
               }} />
             </div>
 
           </div>
         </div>
         <div className="rightMenu">
-         { auth.authenticate ?
-         renderLoggedInMenu() : renderNonLoggedInMenu()}
+          {auth.authenticate ?
+            renderLoggedInMenu() : renderNonLoggedInMenu()}
           <DropdownMenu
             menu={
               <a className="more">
@@ -173,7 +174,7 @@ const Header = (props) => {
             ]}
           />
           <div>
-            <a className="cart">
+            <a href={`/cart`} className="cart">
               <IoIosCart />
               <span style={{ margin: '0 10px' }}>Cart</span>
             </a>

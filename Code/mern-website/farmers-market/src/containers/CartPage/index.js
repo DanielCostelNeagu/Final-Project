@@ -59,12 +59,13 @@ const CartPage = (props) => {
   if (props.onlyCartItems) {
     return (
       <>
-        {Object.keys(cartItems).map((key, index) => (
+        {Object.keys(cartItems).map((key, index ) => (
           <CartItem
             key={index}
             cartItem={cartItems[key]}
             onQuantityInc={onQuantityIncrement}
             onQuantityDec={onQuantityDecrement}
+            onRemoveCartItem={onRemoveCartItem}
           />
         ))}
       </>

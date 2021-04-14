@@ -67,7 +67,7 @@
     background: #fff;
     text-align: center;
     line-height: 30px;
-    color: #2874f0;
+    color: #4B0082;
     font-weight: 500;
     font-size: 16px;
     cursor: pointer;
@@ -107,7 +107,7 @@
 }
 
 .leftspace{
-  width: 60%;
+  width: 45%;
   height: 100%;
   color: #fff;
   letter-spacing: 1px;
@@ -124,4 +124,11 @@
   flex: 1;
   flex-direction: column;
   align-items: center;
+}
+
+.loginInputContainer{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30px;
+  margin: 40px 0;
 }

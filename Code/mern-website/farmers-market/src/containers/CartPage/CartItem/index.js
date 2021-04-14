@@ -27,7 +27,7 @@ const CartItem = (props) => {
     <div className="cartItemContainer">
       <div className="flexRow">
         <div className="cartProImgContainer">
-          <img src= {img} alt={""} />
+          <img src= {img} alt={"Product IMG"} />
         </div>
         <div className="cartItemDetails">
           <div>

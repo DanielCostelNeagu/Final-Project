@@ -21,7 +21,7 @@
     object-fit: contain;
 }
 .thumbnail.active{
-    border: 2px solid #2874f0;
+    border: 2px solid #4B0082;
 }
 .productDescContainer{
     width: 485px;
