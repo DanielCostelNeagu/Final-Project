@@ -11,6 +11,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { login, signout } from '../../actions/auth.actions';
 
+
 /**
 * @author
 * @function Header
@@ -49,7 +50,7 @@ const Header = (props) => {
         menus={[
           { label: 'My Profile', href: '', icon: null },
           { label: 'Farmers Market Plus Zone', href: '', icon: null },
-          { label: 'Orders', href: '', icon: null },
+          { label: 'Orders', href: `/account/orders`, icon: null },
           { label: 'Wishlist', href: '', icon: null },
           { label: 'Rewards', href: '', icon: null },
           { label: 'Gift Cards', href: '', icon: null },
@@ -68,10 +69,26 @@ const Header = (props) => {
               </a>
         }
         menus={[
-          { label: 'Farmers Market Plus Zone', href: '', icon: null },
-          { label: 'Wishlist', href: '', icon: null },
-          { label: 'Rewards Program', href: '', icon: null },
-          { label: 'Buy a Gift Card', href: '', icon: null },
+          { label: 'Farmers Market Plus Zone', href: '', icon: null,  
+          onClick: () => {
+            !auth.authenticate && setLoginModal(true);
+          }, 
+        },
+          { label: 'Wishlist', href: '', icon: null,
+          onClick: () => {
+            !auth.authenticate && setLoginModal(true);
+          },
+        },
+          { label: 'Rewards Program', href: '', icon: null,
+          onClick: () => {
+            !auth.authenticate && setLoginModal(true);
+          },
+        },
+          { label: 'Buy a Gift Card', href: '', icon: null,
+          onClick: () => {
+            !auth.authenticate && setLoginModal(true);
+          },
+        },
         ]}
         firstMenu={
           <div className="firstmenu">

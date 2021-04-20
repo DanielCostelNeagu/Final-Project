@@ -73,7 +73,7 @@ const Address = ({
             </div>
             {adr.selected && (
               <MaterialButton
-                title="DELIVERY HERE"
+                title="DELIVER HERE"
                 onClick={() => confirmDeliveryAddress(adr)}
                 style={{
                   width: "200px",
@@ -257,10 +257,10 @@ const CheckoutPage = (props) => {
                 <CartPage onlyCartItems={true} />
               ) : orderConfirmation ? (
                 <div className="stepCompleted">
-                  {/*{Object.keys(cart.cartItems).length} items */}
-                  {Object.keys(cart.cartItems).reduce(function (qty, key) {
+                  {Object.keys(cart.cartItems).length} Products 
+                 {/* {Object.keys(cart.cartItems).reduce(function (qty, key) {
                     return qty + cart.cartItems[key].qty;
-                  }, 0)} items
+                  }, 0)} items */}
                 </div>
               ) : null
             }
@@ -309,7 +309,7 @@ const CheckoutPage = (props) => {
                     }}
                   >
                     <input type="radio" name="paymentOption" value="cod" />
-                    <div>Cash on delivery</div>
+                    <div>Cash only on delivery</div>
                   </div>
                   <MaterialButton
                     title="CONFIRM ORDER"

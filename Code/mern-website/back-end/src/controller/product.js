@@ -38,7 +38,7 @@ exports.createProduct = (req, res) => {
 exports.getProductsBySlug = (req, res) => {
     const { slug } = req.params;
     Category.findOne({ slug: slug })
-        .select('_id')
+        .select('_id type')
         .exec((error, category) => {
 
             if (error) {
@@ -51,19 +51,24 @@ exports.getProductsBySlug = (req, res) => {
                         if (error) {
                             return res.status(400).json({ error });
                         }
-                        if (products.length > 0) {
-                            res.status(200).json({
-                                products,
-                                productsByPrice: {
-                                    under2: products.filter(product => product.price <= 2),
-                                    under5: products.filter(product => product.price > 2 && product.price <= 5),
-                                    under10: products.filter(product => product.price > 5 && product.price <= 10),
-                                    under20: products.filter(product => product.price > 10 && product.price <= 20),
-                                    under50: products.filter(product => product.price > 20 && product.price <= 50),
-                                    under5000: products.filter(product => product.price > 50 && product.price <= 5000 ),
+                        if (category.type) {
+                            if (products.length > 0) {
+                                res.status(200).json({
+                                    products,
+                                    productsByPrice: {
+                                        under2: products.filter(product => product.price <= 2),
+                                        under5: products.filter(product => product.price > 2 && product.price <= 5),
+                                        under10: products.filter(product => product.price > 5 && product.price <= 10),
+                                        under20: products.filter(product => product.price > 10 && product.price <= 20),
+                                        under50: products.filter(product => product.price > 20 && product.price <= 50),
+                                        under5000: products.filter(product => product.price > 50 && product.price <= 5000),
 
-                                }
-                            });
+                                    }
+                                });
+                            }
+                        }
+                        else {
+                            res.status(200).json({ products });
                         }
 
                     });
@@ -76,14 +81,23 @@ exports.getProductsBySlug = (req, res) => {
 exports.getProductDetailsById = (req, res) => {
     const { productId } = req.params;
     if (productId) {
-        Product.findOne({_id: productId})
-        .exec((error, product) => {
-            if(error) return res.status(400).json({ error });
-            if(product){
-                res.status(200).json({ product});
-            }
-        });
+        Product.findOne({ _id: productId })
+            .exec((error, product) => {
+                if (error) return res.status(400).json({ error });
+                if (product) {
+                    res.status(200).json({ product });
+                }
+            });
     } else {
-        return res.status(400).json({ error: 'Params Required'});
+        return res.status(400).json({ error: 'Params Required' });
     }
+}
+
+exports.getProducts = async (req, res) => {
+    const products = await Product.find({ createdBy: req.user._id })
+        .select("_id name price quantity slug description productPictures category")
+        .populate({ path: "category", select: "_id name" })
+        .exec();
+
+    res.status(200).json({ products });
 }
