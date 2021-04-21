@@ -5,13 +5,14 @@ import Card from "../../../components/UI/Card";
 import { MdEuroSymbol } from 'react-icons/md';
 import { Link } from "react-router-dom";
 import "./style.css";
+import { generatePublicUrl } from '../../../urlConfig';
 
 /**
 * @author
-* @function ClothingAndAccessories
+* @function StoreEssentials
 **/
 
-const ClothingAndAccessories = (props) => {
+const StoreEssentials = (props) => {
     const product = useSelector((state) => state.product);
     const dispatch = useDispatch();
   
@@ -29,13 +30,14 @@ const ClothingAndAccessories = (props) => {
             display: "flex",
           }}
         >
-          {product.products.map((product) => (
+          {product.products.map((product, thumb, img) => (
             <div className="caContainer">
               <Link
                 className="caImgContainer"
                 to={`/${product.slug}/${product._id}/p`}
               >
                 <img src={product.productPictures[0].img} />
+                <img src={generatePublicUrl(img)} alt={thumb.img } />
               </Link>
               <div>
                 <div className="caProductName">{product.name}</div>
@@ -52,4 +54,4 @@ const ClothingAndAccessories = (props) => {
 
  }
 
-export default ClothingAndAccessories
+export default StoreEssentials

@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../../components/Layout';
 import getParams from '../../utils/getParams';
 import ProductStore from './ProductStore';
-import ClothingAndAccessories from "./ClothingAndAccessories";
+import StoreEssentials from "./StoreEssentials";
 import ProductPage from "./ProductPage";
 import './style.css';
 
@@ -25,7 +25,7 @@ const ProductListPage = (props) => {
           content = <ProductPage {...props} />;
           break;
         default:
-          content = <ClothingAndAccessories {...props} />;
+          content = <StoreEssentials {...props} />;
       }
   
       return content;

@@ -100,7 +100,7 @@ export const updateCart = () => {
       ? JSON.parse(localStorage.getItem("cart"))
       : null;
 
-    console.log("upppppppppp");
+    console.log("up local");
 
     if (auth.authenticate) {
       localStorage.removeItem("cart");

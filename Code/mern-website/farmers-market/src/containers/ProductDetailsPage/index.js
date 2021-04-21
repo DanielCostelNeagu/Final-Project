@@ -80,6 +80,7 @@ const ProductDetailsPage = (props) => {
                     title="BUY NOW"
                     bgColor="#169c31"
                     textColor="#ffffff"
+                    onClick={() => props.history.push(`/checkout`)}
                     style={{
                     marginLeft: '5px'
                     }}

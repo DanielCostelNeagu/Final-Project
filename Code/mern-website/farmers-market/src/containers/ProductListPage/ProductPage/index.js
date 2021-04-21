@@ -5,6 +5,7 @@ import getParams from '../../../utils/getParams';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import Card from '../../../components/UI/Card';
+import { generatePublicUrl } from '../../../urlConfig';
 
 /**
 * @author
@@ -52,7 +53,7 @@ const ProductPage = (props) => {
                 margin: '10px 0'
             }}>
                 {
-                    page.products && page.products.map((product, index) => 
+                    page.products && page.products.map((product, index, thumb) => 
                         <Card 
                             key={index}
                             style={{
@@ -64,7 +65,7 @@ const ProductPage = (props) => {
                             <img style={{
                                 width: '100%',
                                 height: '100%'
-                            }} src={product.img} alt="" />
+                            }} src={generatePublicUrl(thumb.img)} alt={thumb.img} />
                         </Card>
                     )
                 }
