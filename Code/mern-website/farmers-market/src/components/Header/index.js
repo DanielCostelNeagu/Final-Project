@@ -10,7 +10,7 @@ import {
 } from '../MaterialUI';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, signout, signup as _signup } from '../../actions/auth.actions';
-
+import Cart from "../UI/Cart";
 
 /**
 * @author
@@ -28,13 +28,33 @@ const Header = (props) => {
   const [lastName, setLastName] = useState("");
   const dispatch = useDispatch();
 
+  const cart = useSelector((state) => state.cart);
+
   const userLogin = () => {
-    dispatch(login({ email, password }));
+    if (signup) {
+      userSignup();
+    } else {
+      dispatch(login({ email, password }));
+    }
   }
 
   const logout = () => {
     dispatch(signout());
   }
+
+  const userSignup = () => {
+    const user = { firstName, lastName, email, password };
+    if (
+      firstName === "" ||
+      lastName === "" ||
+      email === "" ||
+      password === ""
+    ) {
+      return;
+    }
+    dispatch(_signup(user));
+  }
+
 
   useEffect(() => {
     if (auth.authenticate) {
@@ -157,10 +177,10 @@ const Header = (props) => {
                   label="Enter Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  rightElement={<a href="#">Forgot?</a>}
+                  rightElement={<a href="#">Forgot details?</a>}
                 />
                 <MaterialButton
-                  title="Login"
+                  title={signup ? "Register" : "Login"}
                   bgColor="#0c8108"
                   textColor="#ffffff"
                   style={{
@@ -169,7 +189,19 @@ const Header = (props) => {
                   onClick={userLogin}
                 />
 
-                <p /*style={{textAlign: 'center'}}*/>Login to get access to your Orders, Wishlist and Recommendations</p>
+                <p /*style={{textAlign: 'center'}}*/>REGISTER to get Recommendations and More</p>
+                <MaterialButton
+                  title="REGISTER"
+                  bgColor="#0c8108"
+                  textColor="#ffffff"
+                  onClick={() => {
+                    setLoginModal(true);
+                    setSignup(true);
+                  }}
+                  style={{
+                    margin: "20px 0",
+                  }}
+                />
 
               </div>
             </div>
@@ -220,8 +252,9 @@ const Header = (props) => {
           />
           <div>
             <a href={`/cart`} className="cart">
-              <IoIosCart />
-              <span style={{ margin: '0 10px' }}>Cart</span>
+              
+              <Cart count={Object.keys(cart.cartItems).length} />
+              <span style={{ margin: '0 10px' }}></span>
             </a>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav, NavDropdown, Navbar, Container } from "react-bootstrap";
+import { Nav, Navbar, Container } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import { signout } from "../../actions";
@@ -41,7 +41,7 @@ return (
   <Navbar collapseOnSelect  expand="lg" bg="dark" variant="dark" style={{ zIndex: 1 }}>
     <Container fluid>
       {/*<Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand>*/}
-      <Link to="/" className="nav-brand">Admin Dashboard</Link>
+      <Link to="/" className="nav-brand">Admin Dashboard For Farmers Market E-Commerce App</Link>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
@@ -61,7 +61,7 @@ return (
     </Container>
 
   </Navbar>
-)
+);
 
 }
 

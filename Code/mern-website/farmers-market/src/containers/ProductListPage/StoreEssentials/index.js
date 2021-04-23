@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { getProductsBySlug } from "../../../actions";
+import { getProductDetailsById } from '../../../actions';
 import Card from "../../../components/UI/Card";
 import { MdEuroSymbol } from 'react-icons/md';
 import { Link } from "react-router-dom";
@@ -37,8 +38,12 @@ const StoreEssentials = (props) => {
                 to={`/${product.slug}/${product._id}/p`}
               >
                 
-                <img 
-                  src={generatePublicUrl(img)} alt={thumb.img } 
+                <img  //src={product.productPictures[0].img}
+                    src={generatePublicUrl(product.productPictures[0].img)} alt="IMG"
+                   // src={generatePublicUrl(product.img)} alt=""
+                  //src={generatePublicUrl(img)} alt={thumb.img } 
+                 // src={generatePublicUrl(thumb.img)} alt={thumb.img}
+                 // src={generatePublicUrl(product.productDetails.productPictures[0].img)} alt={`${product.productDetails.productPictures[0].img}`}
                 />
                 </Link>
               <div>

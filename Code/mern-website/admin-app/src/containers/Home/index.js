@@ -1,8 +1,8 @@
 import React from 'react';
-import { Col, Container, Jumbotron, Row } from 'react-bootstrap';
+//import { Col, Container, Jumbotron, Row } from 'react-bootstrap';
 import Layout from '../../components/Layout';
 import './style.css';
-import { NavLink } from 'react-router-dom';
+//import { NavLink } from 'react-router-dom';
 
 /**
 * @author

@@ -14,7 +14,7 @@ import { signup } from '../../actions';
 const Signup = (props) => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [error, setError] = useState("");
+    //const [error, setError] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const auth = useSelector((state) => state.auth);
@@ -31,9 +31,9 @@ const Signup = (props) => {
     if (auth.authenticate) {
         return <Redirect to={"/"} />
     }
-   {/* if(user.loading){
+   /* if(user.loading){
         return <p>Loading user ... !</p>
-    }*/}
+    }*/
 
   return(
     <Layout>
