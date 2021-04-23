@@ -30,19 +30,21 @@ const StoreEssentials = (props) => {
             display: "flex",
           }}
         >
-          {product.products.map((product, thumb, img) => (
+          {product.products.map((product, item, thumb, img) => (
             <div className="caContainer">
               <Link
                 className="caImgContainer"
                 to={`/${product.slug}/${product._id}/p`}
               >
-                <img src={product.productPictures[0].img} />
-                <img src={generatePublicUrl(img)} alt={thumb.img } />
-              </Link>
+                
+                <img 
+                  src={generatePublicUrl(img)} alt={thumb.img } 
+                />
+                </Link>
               <div>
                 <div className="caProductName">{product.name}</div>
                 <div className="caProductPrice">
-                  <MdEuroSymbol />
+                  <MdEuroSymbol />  
                   {product.price}
                 </div>
               </div>

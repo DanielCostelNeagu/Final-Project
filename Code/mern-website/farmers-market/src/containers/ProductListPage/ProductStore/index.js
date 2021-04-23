@@ -35,7 +35,7 @@ const ProductStore = (props) => {
   return(
     <>
          {
-                Object.keys(product.productsByPrice).map((key, index, thumb) => {
+                Object.keys(product.productsByPrice).map((key, item, index, thumb) => {
                     return(
                         <Card 
                             headerLeft={`${props.match.params.slug} products under Euro ${priceRange[key]}`}
@@ -56,6 +56,7 @@ const ProductStore = (props) => {
                                             <div className="productImgContainer">
                                                 {/*<img src={generatePublicUrl(product.productPictures[0].img)} alt="" />*/}
                                                 <img src={generatePublicUrl(thumb.img)} alt={thumb.img} />
+                                                
                                             </div>                                        
                                             <div className="productInfo">
                                                 <div style={{ margin: '5px 0' }}>{product.name}</div>

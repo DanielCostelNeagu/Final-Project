@@ -8,6 +8,7 @@ import { MdEuroSymbol } from 'react-icons/md';
 import { IoIosArrowForward } from "react-icons/io";
 import "./style.css";
 import { Breed } from "../../components/MaterialUI";
+import { generatePublicUrl } from '../../urlConfig';
 
 /**
 * @author
@@ -47,7 +48,7 @@ const OrderPage
                   <div className="orderImgContainer">
                     <img
                       className="orderImg"
-                      src={item.productId.productPictures[0].img}
+                      src={generatePublicUrl(item.productId.productPictures[0].img)}
                     />
                   </div>
                   <div className="orderRow">

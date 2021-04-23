@@ -9,7 +9,7 @@ import {
   DropdownMenu
 } from '../MaterialUI';
 import { useDispatch, useSelector } from 'react-redux';
-import { login, signout } from '../../actions/auth.actions';
+import { login, signout, signup as _signup } from '../../actions/auth.actions';
 
 
 /**
@@ -23,6 +23,9 @@ const Header = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const auth = useSelector(state => state.auth);
+  const [signup, setSignup] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const dispatch = useDispatch();
 
   const userLogin = () => {
@@ -64,7 +67,9 @@ const Header = (props) => {
     return (
       <DropdownMenu
         menu={
-          <a className="loginButton" onClick={() => setLoginModal(true)}>
+          <a className="loginButton" onClick={() => 
+            {setSignup(false);
+            setLoginModal(true)}}>
             Login
               </a>
         }
@@ -93,7 +98,11 @@ const Header = (props) => {
         firstMenu={
           <div className="firstmenu">
             <span>New Customer?</span>
-            <a style={{ color: '#4B0082' }}>Sign Up</a>
+            <a onClick={() => {
+                setLoginModal(true);
+                setSignup(true);
+              }}            
+            style={{ color: '#4B0082' }}>Sign Up</a>
           </div>
         }
       />
@@ -117,13 +126,32 @@ const Header = (props) => {
             <div className="rightspace">
 
               <div className="loginInputContainer">
+              {auth.error && (
+                  <div style={{ color: "red", fontSize: 12 }}>{auth.error}</div>
+                )}
+                {signup && (
+                  <MaterialInput
+                  type="text"
+                  label="First Name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
+              )}
+              {signup && (
+                <MaterialInput
+                  type="text"
+                  label="Last Name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+              )}
                 <MaterialInput
                   type="text"
                   label="Enter Email/Enter Mobile Number"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-
+                
                 <MaterialInput
                   type="password"
                   label="Enter Password"
