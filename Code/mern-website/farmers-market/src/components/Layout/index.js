@@ -1,6 +1,8 @@
 import React from 'react'
+import Footer from '../Footer'
 import Header from '../Header'
 import MenuHeader from '../MenuHeader'
+import './style.css';
 
 /**
 * @author
@@ -10,10 +12,18 @@ import MenuHeader from '../MenuHeader'
 const Layout = (props) => {
   return(
     <>
-        <Header />
-            <MenuHeader />
-            {props.children}
-        
+      <div className="page-container">
+        <div className="content-wrap">
+          <Header />
+                <MenuHeader />
+                {props.children}
+        </div> 
+        <div className="footer">    
+          <Footer />
+        </div>
+      </div>   
+    
+
     </>
    )
 
