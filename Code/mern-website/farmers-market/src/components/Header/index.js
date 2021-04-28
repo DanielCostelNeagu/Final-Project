@@ -210,7 +210,7 @@ const Header = (props) => {
       </Modal>
       <div className="subHeader">
         <div className="logo">
-          <a href="">
+          <a href='/'>
             <img src={farmersMarketLogo} className="logoimage" alt="" />
           </a>
 

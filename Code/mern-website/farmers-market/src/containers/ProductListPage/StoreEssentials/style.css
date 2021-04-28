@@ -1,5 +1,6 @@
 .caContainer{
     width: 250px;
+    
 }
 .caImgContainer{
     width: 240px;
@@ -8,7 +9,9 @@
     position: relative;
 }
 .caImgContainer > img{
-    max-width: 100%;
+   
+    max-width: 90%;
+    height: 300px;
     max-height: 300px;
 }
 .caProductName{
