@@ -193,6 +193,8 @@ const CheckoutPage = (props) => {
 
   return (
     <Layout>
+      <br></br>
+        <br></br>
       <div className="cartContainer" style={{ alignItems: "flex-start" }}>
         <div className="checkoutContainer">
           {/* check if user logged in or not */}

@@ -29,6 +29,8 @@ const OrderPage
   
     return (
       <Layout>
+        
+        <br></br>
         <div style={{ maxWidth: "1160px", margin: "5px auto" }}>
           <Breed
             breed={[
@@ -38,6 +40,8 @@ const OrderPage
             ]}
             breedIcon={<IoIosArrowForward />}
           />
+          <br></br>
+        <br></br>
           {user.orders.map((order) => {
             return order.items.map((item) => (
               <Card style={{ display: "block", margin: "5px 0" }}>

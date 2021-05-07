@@ -1,15 +1,17 @@
 .page-container {
     position: relative;
     min-height: 100vh;
+    background:  radial-gradient(#fff, #ffd6d6);
 }
 
 .content-wrap {
-    padding-bottom: 8rem;    /* = Footer height */
+  
+    padding-bottom: 22rem;    /* = Footer height */
 }
 
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 6rem;
+  height: 17rem;
 }

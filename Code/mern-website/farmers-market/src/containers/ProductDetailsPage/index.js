@@ -41,6 +41,8 @@ const ProductDetailsPage = (props) => {
 
     return (
         <Layout>
+            <br></br>
+        <br></br>
            {/* <div>{product.productDetails.name}</div> */}
            <div className="productDescriptionContainer">
             <div className="flexRow">

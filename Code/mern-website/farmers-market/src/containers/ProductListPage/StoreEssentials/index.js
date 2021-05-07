@@ -23,7 +23,10 @@ const StoreEssentials = (props) => {
     }, []);
   
     return (
+      
       <div style={{ padding: "10px" }}>
+        <br></br>
+        <br></br>
         <Card
           style={{
             boxSizing: "border-box",

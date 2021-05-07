@@ -60,6 +60,8 @@ const OrderDetailsPage = (props) => {
 
   return (
     <Layout>
+      <br></br>
+        <br></br>
       <div
         style={{
           width: "1160px",
@@ -95,8 +97,9 @@ const OrderDetailsPage = (props) => {
               <div className="delItemImgContainer">
                 <img src={generatePublicUrl(item.productId.productPictures[0].img)} alt="" />
               </div>
-              <div style={{ width: "250px" }}>
+              <div style={{ width: "250px", padding: "10px" }}>
                 <div className="delItemName">{item.productId.name}</div>
+                <br></br>
                 <Price value={item.payablePrice} />
               </div>
             </div>

@@ -102,8 +102,8 @@
   display: flex;
   flex-flow: row wrap;
   height: 528px;
-    max-width: 750px;
-    min-width: 650px;
+  max-width: 750px;
+  min-width: 650px;
 }
 
 .leftspace{

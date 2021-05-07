@@ -74,6 +74,8 @@ const CartPage = (props) => {
 
   return (
     <Layout>
+      <br></br>
+        <br></br>
       <div className="cartContainer" style={{ alignItems: "flex-start" }}>
         <Card
           headerLeft={`My Cart`}
