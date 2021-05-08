@@ -11,6 +11,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { login, signout, signup as _signup } from '../../actions/auth.actions';
 import Cart from "../UI/Cart";
+import { Link } from 'react-router-dom';
 
 /**
 * @author
@@ -87,42 +88,47 @@ const Header = (props) => {
     return (
       <DropdownMenu
         menu={
-          <a className="loginButton" onClick={() => 
-            {setSignup(false);
-            setLoginModal(true)}}>
+          <a className="loginButton" onClick={() => {
+            setSignup(false);
+            setLoginModal(true)
+          }}>
             Login
               </a>
         }
         menus={[
-          { label: 'Farmers Market Plus Zone', href: '', icon: null,  
-          onClick: () => {
-            !auth.authenticate && setLoginModal(true);
-          }, 
-        },
-          { label: 'Wishlist', href: '', icon: null,
-          onClick: () => {
-            !auth.authenticate && setLoginModal(true);
+          {
+            label: 'Farmers Market Plus Zone', href: '', icon: null,
+            onClick: () => {
+              !auth.authenticate && setLoginModal(true);
+            },
           },
-        },
-          { label: 'Rewards Program', href: '', icon: null,
-          onClick: () => {
-            !auth.authenticate && setLoginModal(true);
+          {
+            label: 'Wishlist', href: '', icon: null,
+            onClick: () => {
+              !auth.authenticate && setLoginModal(true);
+            },
           },
-        },
-          { label: 'Buy a Gift Card', href: '', icon: null,
-          onClick: () => {
-            !auth.authenticate && setLoginModal(true);
+          {
+            label: 'Rewards Program', href: '', icon: null,
+            onClick: () => {
+              !auth.authenticate && setLoginModal(true);
+            },
           },
-        },
+          {
+            label: 'Buy a Gift Card', href: '', icon: null,
+            onClick: () => {
+              !auth.authenticate && setLoginModal(true);
+            },
+          },
         ]}
         firstMenu={
           <div className="firstmenu">
             <span>New Customer?</span>
             <a onClick={() => {
-                setLoginModal(true);
-                setSignup(true);
-              }}            
-            style={{ color: '#4B0082' }}>Sign Up</a>
+              setLoginModal(true);
+              setSignup(true);
+            }}
+              style={{ color: '#4B0082' }}>Sign Up</a>
           </div>
         }
       />
@@ -146,38 +152,37 @@ const Header = (props) => {
             <div className="rightspace">
 
               <div className="loginInputContainer">
-              {auth.error && (
+                {auth.error && (
                   <div style={{ color: "red", fontSize: 12 }}>{auth.error}</div>
                 )}
                 {signup && (
                   <MaterialInput
-                  type="text"
-                  label="First Name"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                />
-              )}
-              {signup && (
-                <MaterialInput
-                  type="text"
-                  label="Last Name"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                />
-              )}
+                    type="text"
+                    label="First Name"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                  />
+                )}
+                {signup && (
+                  <MaterialInput
+                    type="text"
+                    label="Last Name"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                  />
+                )}
                 <MaterialInput
                   type="text"
                   label="Enter Email/Enter Mobile Number"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                
                 <MaterialInput
                   type="password"
                   label="Enter Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  rightElement={<a href="#">Forgot details?</a>}
+                  rightElement={<Link to="#">Forgot details?</Link>}
                 />
                 <MaterialButton
                   title={signup ? "Register" : "Login"}
@@ -188,20 +193,23 @@ const Header = (props) => {
                   }}
                   onClick={userLogin}
                 />
-
                 <p /*style={{textAlign: 'center'}}*/>REGISTER to get Recommendations and More</p>
-                <MaterialButton
-                  title="REGISTER"
-                  bgColor="#0c8108"
-                  textColor="#ffffff"
-                  onClick={() => {
-                    setLoginModal(true);
-                    setSignup(true);
-                  }}
-                  style={{
-                    margin: "20px 0",
-                  }}
-                />
+                
+                  <MaterialButton
+                    title={signup ? "LOGIN" : "REGISTER" }
+                    bgColor="#0c8108"
+                    textColor="#ffffff"
+                    onClick={() => {
+                      setLoginModal(true);
+                      setSignup(true);
+                      //userSignup(true);
+                    }}
+                    style={{
+                      margin: "20px 0",
+                    }}
+                  />
+                 
+
 
               </div>
             </div>
@@ -210,9 +218,9 @@ const Header = (props) => {
       </Modal>
       <div className="subHeader">
         <div className="logo">
-          <a href='/'>
+          <Link to={'/'}>
             <img src={farmersMarketLogo} className="logoimage" alt="" />
-          </a>
+          </Link>
 
 
         </div>
@@ -251,11 +259,11 @@ const Header = (props) => {
             ]}
           />
           <div>
-            <a href={`/cart`} className="cart">
-              
+            <Link to={`/cart`} className="cart">
+
               <Cart count={Object.keys(cart.cartItems).length} />
               <span style={{ margin: '0 10px' }}></span>
-            </a>
+            </Link>
           </div>
         </div>
 

@@ -4,7 +4,7 @@
   "description": "This the back-end for Farmers Marcket website for final year project.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/index.server.js "
+    "start": "node ./src/index.server.js "
   },
   "keywords": [
     "e-commerce",

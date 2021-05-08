@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 /**
@@ -147,7 +148,7 @@ const DropdownMenu = (props) => {
           {props.breed &&
             props.breed.map((item, index) => (
               <li key={index}>
-                <a href={item.href}>{item.name}</a>
+                <Link to={item.href}>{item.name}</Link>
                 {props.breedIcon}
               </li>
             ))}
